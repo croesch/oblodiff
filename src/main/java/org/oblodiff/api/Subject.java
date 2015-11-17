@@ -14,5 +14,5 @@ public interface Subject {
      *
      * @return a {@link java.util.List} of {@link Subject}s that might be empty but never {@code null}.
      */
-    public List<Subject> getChildren();
+    List<Subject> getChildren();
 }
