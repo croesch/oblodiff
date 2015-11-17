@@ -11,8 +11,8 @@
           updates available.
     -->
     <parent>
-        <groupId>de.weltraumschaf</groupId>
-        <artifactId>organization</artifactId>
+        <groupId>org.oblodiff</groupId>
+        <artifactId>oblodiff</artifactId>
         <version>1.0.6</version>
     </parent>
 
