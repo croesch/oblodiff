@@ -11,12 +11,12 @@
           updates available.
     -->
     <parent>
-        <groupId>org.oblodiff</groupId>
-        <artifactId>oblodiff</artifactId>
+        <groupId>de.weltraumschaf</groupId>
+        <artifactId>organization</artifactId>
         <version>1.0.6</version>
     </parent>
 
-    <groupId>de.weltraumschaf.oblodiff</groupId>
+    <groupId>org.oblodiff</groupId>
     <artifactId>oblodiff</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
