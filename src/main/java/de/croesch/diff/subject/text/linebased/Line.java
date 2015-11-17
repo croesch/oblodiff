@@ -11,6 +11,8 @@ import java.util.HashSet;
 /**
  * A line is a line as in line feed or line break. It is used to split a text into chunks as most other diff algorithms
  * do.
+ *
+ * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Line extends TextualSubjectContainerSubject {
   private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(

@@ -6,6 +6,7 @@ import de.croesch.diff.subject.api.Subject;
  * The basic implementation of a Subject, contains code that all Subjects share.
  *
  * @param <CT> the type of the content this subject represents
+ * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public abstract class BasicSubject<CT extends Object> implements Subject {
   /** the representation of the value/content of this subject. */
