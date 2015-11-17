@@ -1,8 +1,8 @@
-package de.croesch.diff.subject.text.linebased;
+package org.oblodiff.subject.text.linebased;
 
-import de.croesch.diff.subject.api.Subject;
-import de.croesch.diff.subject.text.TextualSubjectContainerSubject;
-import de.croesch.diff.subject.text.Word;
+import org.oblodiff.api.Subject;
+import org.oblodiff.subject.text.TextualSubjectContainerSubject;
+import org.oblodiff.subject.text.Word;
 
 import java.util.Arrays;
 import java.util.Collection;

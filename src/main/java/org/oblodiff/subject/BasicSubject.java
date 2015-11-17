@@ -1,6 +1,6 @@
-package de.croesch.diff.subject;
+package org.oblodiff.subject;
 
-import de.croesch.diff.subject.api.Subject;
+import org.oblodiff.api.Subject;
 
 /**
  * The basic implementation of a Subject, contains code that all Subjects share.

@@ -1,6 +1,6 @@
-package de.croesch.diff.subject.text;
+package org.oblodiff.subject.text;
 
-import de.croesch.diff.subject.api.Subject;
+import org.oblodiff.api.Subject;
 
 import java.util.Collections;
 import java.util.List;

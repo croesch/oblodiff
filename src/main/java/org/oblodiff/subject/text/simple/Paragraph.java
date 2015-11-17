@@ -1,7 +1,7 @@
-package de.croesch.diff.subject.text.simple;
+package org.oblodiff.subject.text.simple;
 
-import de.croesch.diff.subject.api.Subject;
-import de.croesch.diff.subject.text.TextualSubjectContainerSubject;
+import org.oblodiff.api.Subject;
+import org.oblodiff.subject.text.TextualSubjectContainerSubject;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -36,7 +36,7 @@ public class Paragraph extends TextualSubjectContainerSubject {
         for (int i = begin; i < getContent().length(); ++i) {
             Character character = new Character(getContent().charAt(i));
             if (String.valueOf(character.charValue()).matches("\\s") || DELIMITERS.contains(character)) {
-                children.add(new de.croesch.diff.subject.text.Character(character));
+                children.add(new org.oblodiff.subject.text.Character(character));
                 ++inserted;
             } else {
                 break;

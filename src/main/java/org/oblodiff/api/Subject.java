@@ -1,4 +1,4 @@
-package de.croesch.diff.subject.api;
+package org.oblodiff.api;
 
 import java.util.List;
 

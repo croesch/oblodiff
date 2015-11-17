@@ -3,4 +3,4 @@
  *
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
-package de.croesch.diff.subject.text.simple;
+package org.oblodiff.subject.text.simple;

@@ -1,6 +1,6 @@
-package de.croesch.diff.subject.text;
+package org.oblodiff.subject.text;
 
-import de.croesch.diff.subject.api.Subject;
+import org.oblodiff.api.Subject;
 
 import java.lang.Character;
 import java.util.Collection;
@@ -28,7 +28,7 @@ public abstract class TextualSubjectContainerSubject extends TextualSplittableSu
 
     @Override
     protected int addDivider(List<Subject> children, int begin, Character character) {
-        children.add(new de.croesch.diff.subject.text.Character(character));
+        children.add(new org.oblodiff.subject.text.Character(character));
         return 1;
     }
 

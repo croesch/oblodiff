@@ -1,6 +1,8 @@
 package de.croesch.diff.subject.text.simple;
 
-import de.croesch.diff.subject.text.Character;
+import org.oblodiff.subject.text.simple.Sentence;
+import org.oblodiff.subject.text.simple.Paragraph;
+import org.oblodiff.subject.text.Character;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

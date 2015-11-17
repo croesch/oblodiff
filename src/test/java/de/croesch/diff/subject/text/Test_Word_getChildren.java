@@ -1,5 +1,7 @@
 package de.croesch.diff.subject.text;
 
+import org.oblodiff.subject.text.Word;
+import org.oblodiff.subject.text.Character;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

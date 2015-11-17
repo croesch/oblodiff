@@ -1,6 +1,6 @@
-package de.croesch.diff.subject.text;
+package org.oblodiff.subject.text;
 
-import de.croesch.diff.subject.BasicSubject;
+import org.oblodiff.subject.BasicSubject;
 
 /**
  * A textual subject is a subject representing a text.

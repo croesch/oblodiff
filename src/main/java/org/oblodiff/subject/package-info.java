@@ -11,4 +11,4 @@
  * <li>how the identity of a subject is defined</li>
  * </ul>
  */
-package de.croesch.diff.subject;
+package org.oblodiff.subject;
