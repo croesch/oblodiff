@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--
+        TIPS:
+
+        - use "mvn versions:display-dependency-updates" to see what dependencies
+          have updates available.
+
+        - use "mvn versions:display-plugin-updates" to see whan plugins have
+          updates available.
+    -->
+    <parent>
+        <groupId>de.weltraumschaf</groupId>
+        <artifactId>organization</artifactId>
+        <version>1.0.6</version>
+    </parent>
+
+    <groupId>de.weltraumschaf.oblodiff</groupId>
+    <artifactId>oblodiff</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>ObloDiff</name>
+    <description>TODO</description>
+
+    <developers>
+        <developer>
+            <id>TODO</id>
+            <name>Christian Rösch</name>
+            <email>TODO</email>
+        </developer>
+        <developer>
+            <id>Weltraumschaf</id>
+            <name>Sven Strittmatter</name>
+            <email>ich@weltraumschaf.de</email>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Weltraumschaf/speakingurl/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/Weltraumschaf/oblodiff</connection>
+        <developerConnection>scm:git:git@github.com:Weltraumschaf/oblodiff.git</developerConnection>
+        <url>https://github.com/Weltraumschaf/oblodiff.git</url>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>github-project-site</id>
+            <url>gitsite:git@github.com/Weltraumschaf/oblodiff.git</url>
+        </site>
+    </distributionManagement>
+
+    <ciManagement>
+        <system>jenkins</system>
+        <url>http://ci.weltraumschaf.de/job/oblodiff/</url>
+    </ciManagement>
+</project>
