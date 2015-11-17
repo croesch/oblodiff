@@ -20,11 +20,12 @@ public abstract class TextualSplittableSubject extends TextualSubject<String> {
 
     @Override
     public final List<Subject> getChildren() {
-        List<Subject> children = new ArrayList<>();
-
+        final List<Subject> children = new ArrayList<>();
         int begin = 0;
+
         for (int i = 0; i < getContent().length(); ++i) {
-            Character character = new Character(getContent().charAt(i));
+            final Character character = getContent().charAt(i);
+
             if (shouldSplitAt(i, character)) {
                 addSubject(children, begin, i);
                 int dividerSize = addDivider(children, i, character);
