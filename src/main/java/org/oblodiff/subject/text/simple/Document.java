@@ -14,8 +14,8 @@ import java.util.Stack;
  */
 public class Document extends TextualSplittableSubject {
 
-    public static final Character CARRIAGE_RETURN = new Character('\r');
-    public static final Character LINE_FEED = new Character('\n');
+    public static final Character CARRIAGE_RETURN = '\r';
+    public static final Character LINE_FEED = '\n';
 
     public Document(String s) {
         super(s);
@@ -30,13 +30,16 @@ public class Document extends TextualSplittableSubject {
 
     private boolean containsBreakTillNextNonWhitespace(int begin, boolean isCarriageReturn) {
         for (int i = begin; i < getContent().length(); ++i) {
-            Character character = new Character(getContent().charAt(i));
+            final Character character = getContent().charAt(i);
+
             if (character.equals(CARRIAGE_RETURN)) {
                 return true;
             }
+
             if (character.equals(LINE_FEED) && (i > begin || !isCarriageReturn)) {
                 return true;
             }
+
             if (String.valueOf(character.charValue()).matches("\\S")) {
                 return false;
             }
@@ -51,9 +54,11 @@ public class Document extends TextualSplittableSubject {
 
     @Override
     protected void endReached(List<Subject> children, int begin, Character cc) {
-        Stack<Character> whitespaces = new Stack<>();
+        final Stack<Character> whitespaces = new Stack<>();
+
         for (int i = getContent().length() - 1; i >= begin; --i) {
-            Character character = new Character(getContent().charAt(i));
+            Character character = getContent().charAt(i);
+
             if (String.valueOf(character.charValue()).matches("\\s")) {
                 whitespaces.push(character);
             } else {
@@ -70,7 +75,8 @@ public class Document extends TextualSplittableSubject {
     protected int addDivider(List<Subject> children, int begin, Character cc) {
         int inserted = 0;
         for (int i = begin; i < getContent().length(); ++i) {
-            Character character = new Character(getContent().charAt(i));
+            final Character character = getContent().charAt(i);
+
             if (String.valueOf(character.charValue()).matches("\\s")) {
                 children.add(new org.oblodiff.subject.text.Character(character));
                 ++inserted;

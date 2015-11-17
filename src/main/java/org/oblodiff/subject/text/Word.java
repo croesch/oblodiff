@@ -17,11 +17,13 @@ public class Word extends TextualSubject<String> {
     }
 
     @Override
-    public List<Subject> getChildren() {
-        ArrayList<Subject> children = new ArrayList<>();
+    public final List<Subject> getChildren() {
+        final List<Subject> children = new ArrayList<>();
+
         for (java.lang.Character c : getContent().toCharArray()) {
             children.add(new Character(c));
         }
+
         return children;
     }
 }

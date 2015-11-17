@@ -34,7 +34,8 @@ public class Paragraph extends TextualSubjectContainerSubject {
     protected int addDivider(List<Subject> children, int begin, Character cc) {
         int inserted = 0;
         for (int i = begin; i < getContent().length(); ++i) {
-            Character character = new Character(getContent().charAt(i));
+            final Character character = getContent().charAt(i);
+
             if (String.valueOf(character.charValue()).matches("\\s") || DELIMITERS.contains(character)) {
                 children.add(new org.oblodiff.subject.text.Character(character));
                 ++inserted;
