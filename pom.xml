@@ -59,7 +59,7 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/Weltraumschaf/oblodiff</connection>
+        <connection>scm:git:git://github.com/Weltraumschaf/oblodiff.git</connection>
         <developerConnection>scm:git:git@github.com:Weltraumschaf/oblodiff.git</developerConnection>
         <url>https://github.com/Weltraumschaf/oblodiff.git</url>
     </scm>
