@@ -25,7 +25,7 @@
     <description>
         A new algorithm and utility to compare files (or anything else) and show any differences among them.
     </description>
-    <url>http://weltraumschaf.github.com/oblodiff/</url>
+    <url>http://croesch.github.com/oblodiff/</url>
 
     <licenses>
         <license>
@@ -56,19 +56,19 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/Weltraumschaf/oblodiff/issues</url>
+        <url>https://github.com/croesch/oblodiff/issues</url>
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/Weltraumschaf/oblodiff.git</connection>
-        <developerConnection>scm:git:git@github.com:Weltraumschaf/oblodiff.git</developerConnection>
-        <url>https://github.com/Weltraumschaf/oblodiff.git</url>
+        <connection>scm:git:git://github.com/croesch/oblodiff.git</connection>
+        <developerConnection>scm:git:git@github.com:croesch/oblodiff.git</developerConnection>
+        <url>https://github.com/croesch/oblodiff.git</url>
     </scm>
 
     <distributionManagement>
         <site>
             <id>github-project-site</id>
-            <url>gitsite:git@github.com/Weltraumschaf/oblodiff.git</url>
+            <url>gitsite:git@github.com/croesch/oblodiff.git</url>
         </site>
     </distributionManagement>
 
