@@ -50,6 +50,9 @@
             <id>Weltraumschaf</id>
             <name>Sven Strittmatter</name>
             <email>ich@weltraumschaf.de</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
             <timezone>+1</timezone>
         </developer>
     </developers>
@@ -79,13 +82,14 @@
 
     <properties>
         <sonar.scm.disabled>true</sonar.scm.disabled>
+        <dependnecy.assertj-core.version>1.7.0</dependnecy.assertj-core.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>1.7.0</version>
+            <version>${dependnecy.assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
