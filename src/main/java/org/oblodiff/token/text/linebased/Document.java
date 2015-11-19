@@ -14,11 +14,17 @@ import java.util.HashSet;
  */
 public class Document extends TextualTokenContainerToken {
 
+    /**
+     * the characters dividing a {@link Document} in {@link Line}s.
+     */
     private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
         '\r',
         '\n'
     ));
 
+    /**
+     * @param s the content this document represents.
+     */
     public Document(String s) {
         super(s, DELIMITERS);
     }

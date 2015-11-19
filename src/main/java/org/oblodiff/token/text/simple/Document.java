@@ -14,8 +14,8 @@ import java.util.Stack;
  */
 public class Document extends TextualSplittableToken {
 
-    public static final Character CARRIAGE_RETURN = '\r';
-    public static final Character LINE_FEED = '\n';
+    private static final Character CARRIAGE_RETURN = '\r';
+    private static final Character LINE_FEED = '\n';
 
     public Document(String s) {
         super(s);
@@ -23,7 +23,7 @@ public class Document extends TextualSplittableToken {
 
     @Override
     protected boolean shouldSplitAt(int i, Character character) {
-        boolean isCarriageReturn = character.equals(CARRIAGE_RETURN);
+        final boolean isCarriageReturn = character.equals(CARRIAGE_RETURN);
         return (isCarriageReturn || character.equals(LINE_FEED)) && containsBreakTillNextNonWhitespace(i + 1,
             isCarriageReturn);
     }
@@ -57,7 +57,7 @@ public class Document extends TextualSplittableToken {
         final Stack<Character> whitespaces = new Stack<>();
 
         for (int i = getContent().length() - 1; i >= begin; --i) {
-            Character character = getContent().charAt(i);
+            final Character character = getContent().charAt(i);
 
             if (String.valueOf(character.charValue()).matches("\\s")) {
                 whitespaces.push(character);

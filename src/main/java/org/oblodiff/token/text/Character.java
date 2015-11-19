@@ -12,6 +12,9 @@ import java.util.List;
  */
 public class Character extends TextualToken<java.lang.Character> {
 
+    /**
+     * @param character the real character this represents.
+     */
     public Character(java.lang.Character character) {
         super(character);
     }
