@@ -12,7 +12,8 @@ public interface Token {
     /**
      * Returns the child tokens. These children built this token.
      *
-     * @return a {@link java.util.List} of {@link Token}s that might be empty but never {@code null}.
+     * @return a {@link java.util.List} of {@link Token}s that might be empty but never {@code null}. Returns an empty
+     * list if and only if this token cannot be split into smaller tokens.
      */
     List<Token> getChildren();
 }
