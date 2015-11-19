@@ -8,13 +8,17 @@ import org.oblodiff.token.api.Token;
  * @param <T> the type of the content this token represents
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
-public abstract class BasicToken<T extends Object> implements Token {
+public abstract class BasicToken<T> implements Token {
 
     /**
      * the representation of the value/content of this token.
      */
     private final T content;
 
+    /**
+     * @param ct the content this token represents.
+     * @see #getContent() for further details
+     */
     public BasicToken(final T ct) {
         super();
         content = ct;
@@ -27,13 +31,12 @@ public abstract class BasicToken<T extends Object> implements Token {
 
     @Override
     public final boolean equals(Object obj) {
-        if (!(obj instanceof BasicToken)) {
-            return false;
-        }
-
-        return content.equals(((BasicToken) obj).content);
+        return obj instanceof BasicToken && content.equals(((BasicToken) obj).content);
     }
 
+    /**
+     * @return the content of this token. The content is used for generating the hash of this token.
+     */
     protected T getContent() {
         return content;
     }
