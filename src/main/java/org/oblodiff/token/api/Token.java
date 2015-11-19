@@ -1,4 +1,4 @@
-package org.oblodiff.api;
+package org.oblodiff.token.api;
 
 import java.util.List;
 

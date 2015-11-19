@@ -1,6 +1,6 @@
 package org.oblodiff.token;
 
-import org.oblodiff.api.Token;
+import org.oblodiff.token.api.Token;
 
 /**
  * The basic implementation of a {@link Token}, contains code that all {@link Token}s share.

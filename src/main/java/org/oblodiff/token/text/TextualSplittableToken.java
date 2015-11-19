@@ -1,6 +1,6 @@
 package org.oblodiff.token.text;
 
-import org.oblodiff.api.Token;
+import org.oblodiff.token.api.Token;
 
 import java.lang.Character;
 import java.util.ArrayList;

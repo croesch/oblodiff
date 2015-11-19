@@ -1,6 +1,6 @@
 package org.oblodiff.token.text.simple;
 
-import org.oblodiff.api.Token;
+import org.oblodiff.token.api.Token;
 import org.oblodiff.token.text.TextualTokenContainerToken;
 import org.oblodiff.token.text.Word;
 
