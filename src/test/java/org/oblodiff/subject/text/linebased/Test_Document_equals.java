@@ -1,4 +1,4 @@
-package de.croesch.diff.subject.text.documentbased;
+package org.oblodiff.subject.text.linebased;
 
 import org.oblodiff.subject.text.linebased.Document;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package de.croesch.diff.subject.text.simple;
+package org.oblodiff.subject.text.simple;
 
 import org.oblodiff.subject.text.simple.Sentence;
 import org.junit.Test;

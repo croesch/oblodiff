@@ -1,4 +1,4 @@
-package de.croesch.diff.subject.text;
+package org.oblodiff.subject.text;
 
 import org.oblodiff.subject.text.Word;
 import org.junit.Test;
