@@ -8,7 +8,7 @@ import org.oblodiff.token.BasicToken;
  * @param <T> the type of the content this token represents
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
-public abstract class TextualToken<T extends Object> extends BasicToken<T> {
+public abstract class TextualToken<T> extends BasicToken<T> {
 
     public TextualToken(T ct) {
         super(ct);

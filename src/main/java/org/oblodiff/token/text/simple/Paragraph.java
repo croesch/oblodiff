@@ -16,9 +16,9 @@ import java.util.List;
 public class Paragraph extends TextualTokenContainerToken {
 
     private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
-        new Character('.'),
-        new Character('?'),
-        new Character('!')
+        '.',
+        '?',
+        '!'
     ));
 
     public Paragraph(String s) {

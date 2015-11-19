@@ -15,27 +15,27 @@ import java.util.HashSet;
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Line extends TextualTokenContainerToken {
-  private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
-      new Character(' '),
-      new Character('\t'),
-      new Character((char) 0x0b),
-      new Character('\f'),
-      new Character('.'),
-      new Character(','),
-      new Character('?'),
-      new Character('!'),
-      new Character('"'),
-      new Character('\''),
-      new Character(':'),
-      new Character(';')
-  ));
+    private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
+        ' ',
+        '\t',
+        (char) 0x0b,
+        '\f',
+        '.',
+        ',',
+        '?',
+        '!',
+        '"',
+        '\'',
+        ':',
+        ';'
+    ));
 
-  public Line(String s) {
-    super(s, DELIMITERS);
-  }
+    public Line(String s) {
+        super(s, DELIMITERS);
+    }
 
-  @Override
-  protected Token newSubject(String content) {
-    return new Word(content);
-  }
+    @Override
+    protected Token newSubject(String content) {
+        return new Word(content);
+    }
 }

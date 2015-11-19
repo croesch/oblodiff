@@ -16,20 +16,20 @@ import java.util.HashSet;
 public class Sentence extends TextualTokenContainerToken {
 
     private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
-        new Character(' '),
-        new Character('\r'),
-        new Character('\n'),
-        new Character('\t'),
-        new Character((char) 0x0b),
-        new Character('\f'),
-        new Character('.'),
-        new Character(','),
-        new Character('?'),
-        new Character('!'),
-        new Character('"'),
-        new Character('\''),
-        new Character(':'),
-        new Character(';')
+        ' ',
+        '\r',
+        '\n',
+        '\t',
+        (char) 0x0b,
+        '\f',
+        '.',
+        ',',
+        '?',
+        '!',
+        '"',
+        '\'',
+        ':',
+        ';'
     ));
 
     public Sentence(String s) {

@@ -15,8 +15,8 @@ import java.util.HashSet;
 public class Document extends TextualTokenContainerToken {
 
     private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
-        new Character('\r'),
-        new Character('\n')
+        '\r',
+        '\n'
     ));
 
     public Document(String s) {
