@@ -1,4 +1,4 @@
 /**
- * Contains the definition of a single subject for diffing.
+ * Contains the definition of a single token for diffing.
  */
 package org.oblodiff.api;
