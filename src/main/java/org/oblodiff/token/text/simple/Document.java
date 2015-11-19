@@ -48,7 +48,7 @@ public class Document extends TextualSplittableToken {
     }
 
     @Override
-    protected Token newSubject(String content) {
+    protected Token newToken(String content) {
         return new Sentence(content);
     }
 
@@ -65,7 +65,7 @@ public class Document extends TextualSplittableToken {
                 break;
             }
         }
-        addSubject(children, begin, getContent().length() - whitespaces.size());
+        addToken(children, begin, getContent().length() - whitespaces.size());
         while (!whitespaces.isEmpty()) {
             children.add(new org.oblodiff.token.text.Character(whitespaces.pop()));
         }

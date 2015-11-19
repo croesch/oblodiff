@@ -30,7 +30,7 @@ public class Document extends TextualTokenContainerToken {
     }
 
     @Override
-    protected Token newSubject(String content) {
+    protected Token newToken(String content) {
         return new Line(content);
     }
 }

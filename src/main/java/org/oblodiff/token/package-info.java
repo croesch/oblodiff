@@ -1,5 +1,5 @@
 /**
- * Describes the different subjects available for diffing.
+ * Describes the different tokens available for diffing.
  * <p>
  * A token (at the top level) can be considered as a mode of
  * the diff. Each token consists of many tokens itself. These child tokens are also tokens and therefore consist

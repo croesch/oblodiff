@@ -34,6 +34,6 @@ public abstract class TextualTokenContainerToken extends TextualSplittableToken 
 
     @Override
     protected void endReached(List<Token> children, int begin, Character character) {
-        addSubject(children, begin, getContent().length());
+        addToken(children, begin, getContent().length());
     }
 }

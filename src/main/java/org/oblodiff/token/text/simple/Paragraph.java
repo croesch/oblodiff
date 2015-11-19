@@ -26,7 +26,7 @@ public class Paragraph extends TextualTokenContainerToken {
     }
 
     @Override
-    protected Token newSubject(String content) {
+    protected Token newToken(String content) {
         return new Sentence(content);
     }
 

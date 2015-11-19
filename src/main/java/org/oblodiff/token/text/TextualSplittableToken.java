@@ -27,7 +27,7 @@ public abstract class TextualSplittableToken extends TextualToken<String> {
             final Character character = getContent().charAt(i);
 
             if (shouldSplitAt(i, character)) {
-                addSubject(children, begin, i);
+                addToken(children, begin, i);
                 int dividerSize = addDivider(children, i, character);
                 begin = i + dividerSize;
                 i += dividerSize - 1;
@@ -39,15 +39,15 @@ public abstract class TextualSplittableToken extends TextualToken<String> {
         return children;
     }
 
-    protected final void addSubject(List<Token> children, int begin, int end) {
+    protected final void addToken(List<Token> children, int begin, int end) {
         if (end > begin) {
-            children.add(newSubject(getContent().substring(begin, end)));
+            children.add(newToken(getContent().substring(begin, end)));
         }
     }
 
     protected abstract boolean shouldSplitAt(int i, Character character);
 
-    protected abstract Token newSubject(String content);
+    protected abstract Token newToken(String content);
 
     protected abstract void endReached(List<Token> children, int begin, Character character);
 
