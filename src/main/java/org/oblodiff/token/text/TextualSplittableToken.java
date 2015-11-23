@@ -4,6 +4,8 @@ import org.oblodiff.token.api.Token;
 
 import java.lang.Character;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -42,11 +44,11 @@ public abstract class TextualSplittableToken extends TextualToken<String> {
             }
         }
 
-        return children;
+        return Collections.unmodifiableList(children);
     }
 
     // TODO Add javadoc.
-    protected final void addToken(final List<Token> children, final int begin, final int end) {
+    protected final void addToken(final Collection<Token> children, final int begin, final int end) {
         if (end > begin) {
             children.add(newToken(getContent().substring(begin, end)));
         }
