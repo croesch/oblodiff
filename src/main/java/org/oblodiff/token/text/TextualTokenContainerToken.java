@@ -3,6 +3,7 @@ package org.oblodiff.token.text;
 import org.oblodiff.token.api.Token;
 
 import java.lang.Character;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.oblodiff.util.Validate;
@@ -28,7 +29,7 @@ public abstract class TextualTokenContainerToken extends TextualSplittableToken 
      */
     public TextualTokenContainerToken(final String content, final Collection<Character> delimiters) {
         super(content);
-        this.delimiters = Validate.notNull(delimiters, "delimiters");
+        this.delimiters = new ArrayList<>(Validate.notNull(delimiters, "delimiters"));
     }
 
     @Override
