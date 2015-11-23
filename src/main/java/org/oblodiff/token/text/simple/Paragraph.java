@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import org.oblodiff.util.Delimiters;
 
 /**
  * A paragraph is a bunch of sentences. Multiple paragraphs are usually separated by more than one line feed.
@@ -18,10 +19,9 @@ public class Paragraph extends TextualTokenContainerToken {
 
     // XXX Usualy paragraphs are delimitted by (\r)\n(\r)\n.
     private static final Collection<Character> DELIMITERS
-        = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
-            '.',
-            '?',
-            '!'
+        = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(Delimiters.PERIOD,
+            Delimiters.QUESTION_MARK,
+            Delimiters.EXCLAMATION_MARK
         )));
 
     /**

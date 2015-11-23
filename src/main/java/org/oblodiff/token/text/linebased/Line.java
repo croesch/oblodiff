@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import org.oblodiff.util.Delimiters;
 
 /**
  * A line is a line as in line feed or line break. It is used to split a text into chunks as most other diff algorithms
@@ -22,21 +23,22 @@ public class Line extends TextualTokenContainerToken {
 
     /**
      * The characters dividing a text in {@link Word words}.
+     *
+     * XXX Intention that this is different to Sentence#DELIMITERS?
      */
     private static final Collection<Character> DELIMITERS
-        = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(
-            ' ',
-            '\t',
-            (char) 0x0b,
-            '\f',
-            '.',
-            ',',
-            '?',
-            '!',
-            '"',
-            '\'',
-            ':',
-            ';'
+        = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(Delimiters.SPACE,
+            Delimiters.TABULATOR,
+            Delimiters.VERTICAL_TABULATOR,
+            Delimiters.FORM_FEED,
+            Delimiters.PERIOD,
+            Delimiters.COMMA,
+            Delimiters.QUESTION_MARK,
+            Delimiters.EXCLAMATION_MARK,
+            Delimiters.DOUBLE_QUOTE,
+            Delimiters.SINGLE_QUOTE,
+            Delimiters.COLON,
+            Delimiters.SEMICOLON
         )));
 
     /**
