@@ -11,6 +11,7 @@ import java.util.HashSet;
 /**
  * A sentence is a couple of words. It is used to split a text into logical chunks.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Sentence extends TextualTokenContainerToken {

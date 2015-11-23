@@ -10,6 +10,7 @@ import java.util.List;
  * This is a more high level token that is based on a string which can be split at several positions, dividing this
  * token into child tokens and the child token dividers.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public abstract class TextualSplittableToken extends TextualToken<String> {

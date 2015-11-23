@@ -10,6 +10,7 @@ import java.util.HashSet;
 /**
  * This is a document is a full text that is line based.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Document extends TextualTokenContainerToken {

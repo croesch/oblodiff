@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * A character is a textual token that represents a single char.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Character extends TextualToken<java.lang.Character> {

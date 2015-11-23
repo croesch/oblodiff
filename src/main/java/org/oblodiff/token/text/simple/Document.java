@@ -10,6 +10,7 @@ import java.util.Stack;
  * This is a document is a full text that is simple in terms of just plain text. It consists of paragraphs, sentences,
  * words and characters.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Document extends TextualSplittableToken {

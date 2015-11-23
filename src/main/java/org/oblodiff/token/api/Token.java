@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * A token is a part of the diff that can be uniquely identified and that might be split up into smaller tokens.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public interface Token {

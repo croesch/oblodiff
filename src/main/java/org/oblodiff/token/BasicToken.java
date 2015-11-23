@@ -5,6 +5,7 @@ import org.oblodiff.token.api.Token;
 /**
  * The basic implementation of a {@link Token}, contains code that all {@link Token}s share.
  *
+ * @since 1.0.0
  * @param <T> the type of the content this token represents
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */

@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * A word is a textual token that is made up of characters.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Word extends TextualToken<String> {

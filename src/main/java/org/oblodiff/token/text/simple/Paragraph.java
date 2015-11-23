@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * A paragraph is a bunch of sentences. Multiple paragraphs are usually separated by more than one line feed.
  *
+ * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
  */
 public class Paragraph extends TextualTokenContainerToken {
