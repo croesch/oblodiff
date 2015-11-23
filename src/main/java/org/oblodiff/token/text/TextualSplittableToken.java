@@ -59,7 +59,7 @@ public abstract class TextualSplittableToken extends TextualToken<String> {
     // TODO Add javadoc.
     protected abstract Token newToken(String content);
     // TODO Add javadoc.
-    protected abstract void endReached(List<Token> children, int begin, Character character);
+    protected abstract void endReached(Collection<Token> children, int begin, Character character);
     // TODO Add javadoc.
-    protected abstract int addDivider(List<Token> children, int begin, Character character);
+    protected abstract int addDivider(Collection<Token> children, int begin, Character character);
 }

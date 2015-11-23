@@ -1,5 +1,6 @@
 package org.oblodiff.token.text.simple;
 
+import java.util.Collection;
 import org.oblodiff.token.api.Token;
 import org.oblodiff.token.text.TextualSplittableToken;
 
@@ -54,7 +55,7 @@ public class Document extends TextualSplittableToken {
     }
 
     @Override
-    protected void endReached(List<Token> children, int begin, Character cc) {
+    protected void endReached(Collection<Token> children, int begin, Character cc) {
         final Stack<Character> whitespaces = new Stack<>();
 
         for (int i = getContent().length() - 1; i >= begin; --i) {
@@ -73,7 +74,7 @@ public class Document extends TextualSplittableToken {
     }
 
     @Override
-    protected int addDivider(List<Token> children, int begin, Character cc) {
+    protected int addDivider(Collection<Token> children, int begin, Character cc) {
         int inserted = 0;
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);

@@ -32,7 +32,7 @@ public class Paragraph extends TextualTokenContainerToken {
     }
 
     @Override
-    protected int addDivider(List<Token> children, int begin, Character cc) {
+    protected int addDivider(Collection<Token> children, int begin, Character cc) {
         int inserted = 0;
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
