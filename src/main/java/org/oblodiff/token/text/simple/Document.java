@@ -5,6 +5,7 @@ import org.oblodiff.token.api.Token;
 import org.oblodiff.token.text.TextualSplittableToken;
 
 import java.util.Stack;
+import org.oblodiff.util.CharacterMatcher;
 
 /**
  * This is a document which is a full text that is simple in terms of just plain text.
@@ -20,9 +21,6 @@ import java.util.Stack;
  */
 public class Document extends TextualSplittableToken {
 
-    private static final String NON_WHITE_SPACE_REGEX = "\\S";
-    private static final String WHITE_SPACE_REGEX = "\\s";
-
     /**
      * Dedicated constructor.
      *
@@ -34,9 +32,9 @@ public class Document extends TextualSplittableToken {
 
     @Override
     protected boolean shouldSplitAt(final int i, final Character character) {
-        final boolean isCarriageReturn = isCariageReturn(character);
+        final boolean isCarriageReturn = CharacterMatcher.isCariageReturn(character);
 
-        return (isCarriageReturn || isLineFeed(character))
+        return (isCarriageReturn || CharacterMatcher.isLineFeed(character))
             && containsBreakTillNextNonWhitespace(i + 1, isCarriageReturn);
     }
 
@@ -44,15 +42,15 @@ public class Document extends TextualSplittableToken {
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
 
-            if (isCariageReturn(character)) {
+            if (CharacterMatcher.isCariageReturn(character)) {
                 return true;
             }
 
-            if (isLineFeed(character) && (i > begin || !isCarriageReturn)) {
+            if (CharacterMatcher.isLineFeed(character) && (i > begin || !isCarriageReturn)) {
                 return true;
             }
 
-            if (isNonWhiteSpace(character)) {
+            if (CharacterMatcher.isNonWhiteSpace(character)) {
                 return false;
             }
         }
@@ -72,7 +70,7 @@ public class Document extends TextualSplittableToken {
         for (int i = getContent().length() - 1; i >= begin; --i) {
             final Character character = getContent().charAt(i);
 
-            if (isWhiteSpace(character)) {
+            if (CharacterMatcher.isWhiteSpace(character)) {
                 whitespaces.push(character);
             } else {
                 break;
@@ -93,7 +91,7 @@ public class Document extends TextualSplittableToken {
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
 
-            if (isWhiteSpace(character)) {
+            if (CharacterMatcher.isWhiteSpace(character)) {
                 children.add(new org.oblodiff.token.text.Character(character));
                 ++inserted;
             } else {
@@ -104,27 +102,4 @@ public class Document extends TextualSplittableToken {
         return inserted;
     }
 
-    private boolean isLineFeed(final Character ch) {
-        return LINE_FEED.equals(ch);
-    }
-
-    private boolean isCariageReturn(final Character ch) {
-        return CARRIAGE_RETURN.equals(ch);
-    }
-
-    private boolean isWhiteSpace(final Character ch) {
-        if (null == ch) {
-            return false;
-        }
-
-        return String.valueOf(ch.charValue()).matches(WHITE_SPACE_REGEX);
-    }
-
-    private boolean isNonWhiteSpace(final Character ch) {
-        if (null == ch) {
-            return false;
-        }
-
-        return String.valueOf(ch.charValue()).matches(NON_WHITE_SPACE_REGEX);
-    }
 }

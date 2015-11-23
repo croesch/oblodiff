@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import org.oblodiff.util.Delimiters;
 
 /**
  * This is a document is a full text that is line based.
@@ -23,8 +24,8 @@ public class Document extends TextualTokenContainerToken {
      */
     private static final Collection<Character> DELIMITERS
         = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(
-            CARRIAGE_RETURN,
-            LINE_FEED
+            Delimiters.CARRIAGE_RETURN,
+            Delimiters.LINE_FEED
         )));
 
     /**
