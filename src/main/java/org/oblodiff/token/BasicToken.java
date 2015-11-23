@@ -39,7 +39,14 @@ public abstract class BasicToken<T> implements Token {
     }
 
     /**
-     * @return the content of this token. The content is used for generating the hash of this token.
+     * Return the content of this token.
+     * <p>
+     * The content is used for generating the hash of this token.
+     * </p>
+     *
+     * XXX Should this be part of Token interface?
+     * 
+     * @return never {@code null}
      */
     protected final T getContent() {
         return content;

@@ -15,8 +15,13 @@ import java.util.List;
  */
 public abstract class TextualSplittableToken extends TextualToken<String> {
 
-    public TextualSplittableToken(String s) {
-        super(s);
+    /**
+     * Dedicated constructor.
+     *
+     * @param content must not be {@code null}
+     */
+    public TextualSplittableToken(final String content) {
+        super(content);
     }
 
     @Override
@@ -40,17 +45,19 @@ public abstract class TextualSplittableToken extends TextualToken<String> {
         return children;
     }
 
-    protected final void addToken(List<Token> children, int begin, int end) {
+    // TODO Add javadoc.
+    protected final void addToken(final List<Token> children, final int begin, final int end) {
         if (end > begin) {
             children.add(newToken(getContent().substring(begin, end)));
         }
     }
 
+    // TODO Add javadoc.
     protected abstract boolean shouldSplitAt(int i, Character character);
-
+    // TODO Add javadoc.
     protected abstract Token newToken(String content);
-
+    // TODO Add javadoc.
     protected abstract void endReached(List<Token> children, int begin, Character character);
-
+    // TODO Add javadoc.
     protected abstract int addDivider(List<Token> children, int begin, Character character);
 }
