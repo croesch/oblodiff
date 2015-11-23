@@ -1,6 +1,7 @@
 package org.oblodiff.token;
 
 import org.oblodiff.token.api.Token;
+import org.oblodiff.util.Validate;
 
 /**
  * The basic implementation of a {@link Token}, contains code that all {@link Token}s share.
@@ -17,28 +18,30 @@ public abstract class BasicToken<T> implements Token {
     private final T content;
 
     /**
-     * @param ct the content this token represents.
+     * Dedicated constructor.
+     *
+     * @param content must not be {@code null}
      * @see #getContent() for further details
      */
-    public BasicToken(final T ct) {
+    public BasicToken(final T content) {
         super();
-        content = ct;
+        this.content = Validate.notNull(content, "content");
     }
 
     @Override
     public final int hashCode() {
-        return content.hashCode();
+        return getContent().hashCode();
     }
 
     @Override
-    public final boolean equals(Object obj) {
-        return obj instanceof BasicToken && content.equals(((BasicToken) obj).content);
+    public final boolean equals(final Object obj) {
+        return obj instanceof BasicToken && getContent().equals(((BasicToken) obj).getContent());
     }
 
     /**
      * @return the content of this token. The content is used for generating the hash of this token.
      */
-    protected T getContent() {
+    protected final T getContent() {
         return content;
     }
 
