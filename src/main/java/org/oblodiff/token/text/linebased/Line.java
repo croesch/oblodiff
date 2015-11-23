@@ -49,7 +49,7 @@ public class Line extends TextualTokenContainerToken {
     }
 
     @Override
-    protected Token newToken(String content) {
+    protected Token newToken(final String content) {
         return new Word(content);
     }
 }

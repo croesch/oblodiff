@@ -32,12 +32,12 @@ public class Document extends TextualTokenContainerToken {
      *
      * @param content must not be {@code null}
      */
-    public Document(String content) {
+    public Document(final String content) {
         super(content, DELIMITERS);
     }
 
     @Override
-    protected Token newToken(String content) {
+    protected Token newToken(final String content) {
         return new Line(content);
     }
 }

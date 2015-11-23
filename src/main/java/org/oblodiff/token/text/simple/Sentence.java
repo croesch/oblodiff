@@ -6,6 +6,7 @@ import org.oblodiff.token.text.Word;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 
 /**
@@ -16,29 +17,35 @@ import java.util.HashSet;
  */
 public class Sentence extends TextualTokenContainerToken {
 
-    private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
-        ' ',
-        '\r',
-        '\n',
-        '\t',
-        (char) 0x0b,
-        '\f',
-        '.',
-        ',',
-        '?',
-        '!',
-        '"',
-        '\'',
-        ':',
-        ';'
-    ));
+    private static final Collection<Character> DELIMITERS
+        = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
+            ' ',
+            '\r',
+            '\n',
+            '\t',
+            (char) 0x0b,
+            '\f',
+            '.',
+            ',',
+            '?',
+            '!',
+            '"',
+            '\'',
+            ':',
+            ';'
+        )));
 
-    public Sentence(String s) {
-        super(s, DELIMITERS);
+    /**
+     * Dedicated constructor.
+     *
+     * @param content must not be {@code null}
+     */
+    public Sentence(final String content) {
+        super(content, DELIMITERS);
     }
 
     @Override
-    protected Token newToken(String content) {
+    protected Token newToken(final String content) {
         return new Word(content);
     }
 }

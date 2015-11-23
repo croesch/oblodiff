@@ -5,8 +5,8 @@ import org.oblodiff.token.text.TextualTokenContainerToken;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 
 /**
  * A paragraph is a bunch of sentences. Multiple paragraphs are usually separated by more than one line feed.
@@ -16,23 +16,30 @@ import java.util.List;
  */
 public class Paragraph extends TextualTokenContainerToken {
 
-    private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
-        '.',
-        '?',
-        '!'
-    ));
+    // XXX Usualy paragraphs are delimitted by (\r)\n(\r)\n.
+    private static final Collection<Character> DELIMITERS
+        = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
+            '.',
+            '?',
+            '!'
+        )));
 
-    public Paragraph(String s) {
-        super(s, DELIMITERS);
+    /**
+     * Dedicated constructor.
+     *
+     * @param content must not be {@code null}
+     */
+    public Paragraph(String content) {
+        super(content, DELIMITERS);
     }
 
     @Override
-    protected Token newToken(String content) {
+    protected Token newToken(final String content) {
         return new Sentence(content);
     }
 
     @Override
-    protected int addDivider(Collection<Token> children, int begin, Character cc) {
+    protected int addDivider(final Collection<Token> children, final int begin, Character cc) {
         int inserted = 0;
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
