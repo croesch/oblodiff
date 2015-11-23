@@ -36,21 +36,21 @@ public class Document extends TextualSplittableToken {
 
     @Override
     protected boolean shouldSplitAt(final int i, final Character character) {
-        final boolean isCarriageReturn = character.equals(CARRIAGE_RETURN);
+        final boolean isCarriageReturn = isCariageReturn(character);
 
-        return (isCarriageReturn || character.equals(LINE_FEED)) && containsBreakTillNextNonWhitespace(i + 1,
-            isCarriageReturn);
+        return (isCarriageReturn || isLineFeed(character))
+            && containsBreakTillNextNonWhitespace(i + 1, isCarriageReturn);
     }
 
     private boolean containsBreakTillNextNonWhitespace(final int begin, final boolean isCarriageReturn) {
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
 
-            if (character.equals(CARRIAGE_RETURN)) {
+            if (isCariageReturn(character)) {
                 return true;
             }
 
-            if (character.equals(LINE_FEED) && (i > begin || !isCarriageReturn)) {
+            if (isLineFeed(character) && (i > begin || !isCarriageReturn)) {
                 return true;
             }
 
@@ -104,5 +104,13 @@ public class Document extends TextualSplittableToken {
         }
 
         return inserted;
+    }
+
+    private boolean isLineFeed(final Character ch) {
+        return LINE_FEED.equals(ch);
+    }
+
+    private boolean isCariageReturn(final Character ch) {
+        return CARRIAGE_RETURN.equals(ch);
     }
 }
