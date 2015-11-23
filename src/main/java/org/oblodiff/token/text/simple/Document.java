@@ -20,6 +20,8 @@ import java.util.Stack;
  */
 public class Document extends TextualSplittableToken {
 
+    private static final String NON_WHITE_SPACE_REGEX = "\\S";
+    private static final String WHITE_SPACE_REGEX = "\\s";
     private static final Character CARRIAGE_RETURN = '\r';
     private static final Character LINE_FEED = '\n';
 
@@ -52,7 +54,7 @@ public class Document extends TextualSplittableToken {
                 return true;
             }
 
-            if (String.valueOf(character.charValue()).matches("\\S")) {
+            if (String.valueOf(character.charValue()).matches(NON_WHITE_SPACE_REGEX)) {
                 return false;
             }
         }
@@ -72,7 +74,7 @@ public class Document extends TextualSplittableToken {
         for (int i = getContent().length() - 1; i >= begin; --i) {
             final Character character = getContent().charAt(i);
 
-            if (String.valueOf(character.charValue()).matches("\\s")) {
+            if (String.valueOf(character.charValue()).matches(WHITE_SPACE_REGEX)) {
                 whitespaces.push(character);
             } else {
                 break;
@@ -93,7 +95,7 @@ public class Document extends TextualSplittableToken {
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
 
-            if (String.valueOf(character.charValue()).matches("\\s")) {
+            if (String.valueOf(character.charValue()).matches(WHITE_SPACE_REGEX)) {
                 children.add(new org.oblodiff.token.text.Character(character));
                 ++inserted;
             } else {
