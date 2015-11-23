@@ -45,7 +45,7 @@ public abstract class BasicToken<T> implements Token {
      * </p>
      *
      * XXX Should this be part of Token interface?
-     * 
+     *
      * @return never {@code null}
      */
     protected final T getContent() {
