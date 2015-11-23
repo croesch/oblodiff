@@ -5,10 +5,13 @@ import org.oblodiff.token.text.TextualTokenContainerToken;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 
 /**
  * This is a document is a full text that is line based.
+ *
+ * XXX Should this class be named DocumentToken?
  *
  * @since 1.0.0
  * @author Christian Rösch &lt;christianroesch@gmx.net&gt;
@@ -16,18 +19,21 @@ import java.util.HashSet;
 public class Document extends TextualTokenContainerToken {
 
     /**
-     * the characters dividing a {@link Document} in {@link Line}s.
+     * The characters dividing a {@link Document document} in {@link Line lines}.
      */
-    private static final Collection<Character> DELIMITERS = new HashSet<>(Arrays.asList(
+    private static final Collection<Character> DELIMITERS
+        = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(
         '\r',
         '\n'
-    ));
+    )));
 
     /**
-     * @param s the content this document represents.
+     * Dedicated constructor.
+     *
+     * @param content must not be {@code null}
      */
-    public Document(String s) {
-        super(s, DELIMITERS);
+    public Document(String content) {
+        super(content, DELIMITERS);
     }
 
     @Override
