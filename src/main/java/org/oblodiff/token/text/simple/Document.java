@@ -54,7 +54,7 @@ public class Document extends TextualSplittableToken {
                 return true;
             }
 
-            if (String.valueOf(character.charValue()).matches(NON_WHITE_SPACE_REGEX)) {
+            if (isNonWhiteSpace(character)) {
                 return false;
             }
         }
@@ -74,7 +74,7 @@ public class Document extends TextualSplittableToken {
         for (int i = getContent().length() - 1; i >= begin; --i) {
             final Character character = getContent().charAt(i);
 
-            if (String.valueOf(character.charValue()).matches(WHITE_SPACE_REGEX)) {
+            if (isWhiteSpace(character)) {
                 whitespaces.push(character);
             } else {
                 break;
@@ -95,7 +95,7 @@ public class Document extends TextualSplittableToken {
         for (int i = begin; i < getContent().length(); ++i) {
             final Character character = getContent().charAt(i);
 
-            if (String.valueOf(character.charValue()).matches(WHITE_SPACE_REGEX)) {
+            if (isWhiteSpace(character)) {
                 children.add(new org.oblodiff.token.text.Character(character));
                 ++inserted;
             } else {
@@ -112,5 +112,21 @@ public class Document extends TextualSplittableToken {
 
     private boolean isCariageReturn(final Character ch) {
         return CARRIAGE_RETURN.equals(ch);
+    }
+
+    private boolean isWhiteSpace(final Character ch) {
+        if (null == ch) {
+            return false;
+        }
+
+        return String.valueOf(ch.charValue()).matches(WHITE_SPACE_REGEX);
+    }
+
+    private boolean isNonWhiteSpace(final Character ch) {
+        if (null == ch) {
+            return false;
+        }
+
+        return String.valueOf(ch.charValue()).matches(NON_WHITE_SPACE_REGEX);
     }
 }
