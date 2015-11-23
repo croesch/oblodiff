@@ -47,6 +47,9 @@ public abstract class BasicToken<T> implements Token {
 
     @Override
     public String toString() {
-        return super.toString() + " >" + content + "<";
+        return "BasicToken{"
+            + "content=" + content
+            + '}';
     }
+
 }

@@ -3,6 +3,7 @@ package org.oblodiff.token;
 import java.util.List;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
+import static org.hamcrest.Matchers.containsString;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.oblodiff.token.api.Token;
@@ -11,8 +12,6 @@ import org.oblodiff.token.api.Token;
  * Tests for {@link BasicToken}.
  */
 public class BasicTokenTest {
-
-
 
     @Test(expected = NullPointerException.class)
     @SuppressWarnings("ResultOfObjectAllocationIgnored")
@@ -26,9 +25,14 @@ public class BasicTokenTest {
         EqualsVerifier.forClass(BasicToken.class).suppress(Warning.NULL_FIELDS).verify();
     }
 
-    private static final class BasicTokenStub extends BasicToken<Void> {
+    @Test
+    public void toStringContainsContent() {
+        assertThat(new BasicTokenStub("foo").toString(), containsString("foo"));
+    }
 
-        public BasicTokenStub(final Void content) {
+    private static final class BasicTokenStub extends BasicToken<String> {
+
+        public BasicTokenStub(final String content) {
             super(content);
         }
 
