@@ -11,6 +11,15 @@ import java.util.List;
 public interface Token {
 
     /**
+     * Constant for carriage return.
+     */
+    Character CARRIAGE_RETURN = '\r';
+    /**
+     * Constant for line feed.
+     */
+    Character LINE_FEED = '\n';
+
+    /**
      * Returns the child tokens.
      *
      * <p>

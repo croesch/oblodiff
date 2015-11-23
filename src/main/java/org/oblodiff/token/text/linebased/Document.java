@@ -23,9 +23,9 @@ public class Document extends TextualTokenContainerToken {
      */
     private static final Collection<Character> DELIMITERS
         = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(
-        '\r',
-        '\n'
-    )));
+            CARRIAGE_RETURN,
+            LINE_FEED
+        )));
 
     /**
      * Dedicated constructor.

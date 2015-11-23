@@ -22,8 +22,6 @@ public class Document extends TextualSplittableToken {
 
     private static final String NON_WHITE_SPACE_REGEX = "\\S";
     private static final String WHITE_SPACE_REGEX = "\\s";
-    private static final Character CARRIAGE_RETURN = '\r';
-    private static final Character LINE_FEED = '\n';
 
     /**
      * Dedicated constructor.
