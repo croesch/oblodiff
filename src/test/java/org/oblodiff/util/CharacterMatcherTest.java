@@ -1,13 +1,38 @@
 package org.oblodiff.util;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import static org.hamcrest.Matchers.either;
+import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 /**
  * Tests for {@link CharacterMatcher}.
+ *
+ * @author Sven Strittmatter &lt;weltraumschaf@googlemail.com&gt;
  */
 public class CharacterMatcherTest {
+
+    @Rule
+    //CHECKSTYLE:OFF
+    public final ExpectedException thrown = ExpectedException.none();
+    //CHECKSTYLE:ON
+
+    @Test
+    public void invokeConstructorByReflectionThrowsException() throws Exception {
+        assertThat(CharacterMatcher.class.getDeclaredConstructors().length, is(1));
+
+        final Constructor<CharacterMatcher> ctor = CharacterMatcher.class.getDeclaredConstructor();
+        ctor.setAccessible(true);
+
+        thrown.expect(either(instanceOf(UnsupportedOperationException.class))
+                .or(instanceOf(InvocationTargetException.class)));
+        ctor.newInstance();
+    }
 
     @Test
     public void isLineFeed_null() {
