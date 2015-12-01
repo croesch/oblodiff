@@ -3,11 +3,12 @@ package org.oblodiff.token.text.linebased;
 import org.oblodiff.token.api.Token;
 import org.oblodiff.token.text.TextualTokenContainerToken;
 import org.oblodiff.token.text.Word;
+import org.oblodiff.util.Delimiters;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import org.oblodiff.util.Delimiters;
+import java.util.HashSet;
 
 /**
  * A line is a line as in line feed or line break. It is used to split a text into chunks as most other diff algorithms
