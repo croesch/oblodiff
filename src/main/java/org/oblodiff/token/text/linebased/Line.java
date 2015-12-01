@@ -7,7 +7,6 @@ import org.oblodiff.token.text.Word;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import org.oblodiff.util.Delimiters;
 
 /**
@@ -22,7 +21,7 @@ import org.oblodiff.util.Delimiters;
 public class Line extends TextualTokenContainerToken {
 
     /**
-     * The characters dividing a text in {@link Word words}.
+     * The characters dividing a line in {@link Word words}.
      */
     private static final Collection<Character> DELIMITERS
         = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(Delimiters.SPACE,

@@ -6,7 +6,7 @@ import org.oblodiff.token.text.TextualTokenContainerToken;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
+
 import org.oblodiff.util.Delimiters;
 
 /**
@@ -17,7 +17,10 @@ import org.oblodiff.util.Delimiters;
  */
 public class Paragraph extends TextualTokenContainerToken {
 
-    // XXX Usualy paragraphs are delimitted by (\r)\n(\r)\n.
+    /**
+     * The characters dividing a {@link Paragraph paragraph} in {@link Sentence sentences}.
+     * XXX Probably better placed into child because it's slightly more intuitive when reading the source
+     */
     private static final Collection<Character> DELIMITERS
         = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(Delimiters.PERIOD,
             Delimiters.QUESTION_MARK,

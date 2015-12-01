@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+
 import org.oblodiff.util.Delimiters;
 
 /**
@@ -18,6 +19,9 @@ import org.oblodiff.util.Delimiters;
  */
 public class Sentence extends TextualTokenContainerToken {
 
+    /**
+     * The characters dividing a {@link Sentence sentence} in {@link Word words}.
+     */
     private static final Collection<Character> DELIMITERS
         = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(Delimiters.SPACE,
             Delimiters.CARRIAGE_RETURN,
