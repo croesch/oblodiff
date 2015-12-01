@@ -23,8 +23,6 @@ public class Line extends TextualTokenContainerToken {
 
     /**
      * The characters dividing a text in {@link Word words}.
-     *
-     * XXX Intention that this is different to Sentence#DELIMITERS?
      */
     private static final Collection<Character> DELIMITERS
         = Collections.unmodifiableCollection(new HashSet<>(Arrays.asList(Delimiters.SPACE,
