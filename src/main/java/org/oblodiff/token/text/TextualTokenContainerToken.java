@@ -40,7 +40,7 @@ public abstract class TextualTokenContainerToken extends TextualSplittableToken 
     @Override
     protected int addDivider(final Collection<Token> children, final int begin, Character character) {
         children.add(new org.oblodiff.token.text.Character(character));
-        return 1; // XXX What does 1 mean?
+        return 1;
     }
 
     @Override
