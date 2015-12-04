@@ -26,8 +26,8 @@ public class Word extends TextualToken<String> {
     }
 
     @Override
-    public final List<Token> getChildren() {
-        final List<Token> children = new ArrayList<>();
+    public final List<Character> getChildren() {
+        final List<Character> children = new ArrayList<>();
 
         for (final java.lang.Character c : getContent().toCharArray()) {
             children.add(new Character(c));

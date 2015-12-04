@@ -18,9 +18,7 @@ public interface Token {
      * tokens.
      * </p>
      *
-     * XXX Maybe this method should return an upper bound wildcard?
-     *
      * @return might be empty but never {@code null}, unmodifiable
      */
-    List<Token> getChildren();
+    List<? extends Token> getChildren();
 }
