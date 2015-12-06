@@ -82,7 +82,7 @@
 
     <properties>
         <sonar.scm.disabled>true</sonar.scm.disabled>
-        <dependency.assertj-core.version>1.7.0</dependency.assertj-core.version>
+        <dependency.assertj-core.version>2.2.0</dependency.assertj-core.version>
     </properties>
 
     <dependencies>
