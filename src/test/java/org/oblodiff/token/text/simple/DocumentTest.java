@@ -2,8 +2,6 @@ package org.oblodiff.token.text.simple;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
-import org.junit.Ignore;
-import org.oblodiff.token.text.linebased.Line;
 import org.oblodiff.token.text.Character;
 import org.junit.Test;
 
@@ -30,24 +28,29 @@ public class DocumentTest {
 
     @Test
     public void getChildren_shouldReturnOneChildIfConsistsOfOneLine() {
-        assertThat(new Document("super").getChildren()).containsExactly(new Line("super"));
+        assertThat(new Document("super").getChildren()).containsExactly(new Paragraph("super"));
     }
 
     @Test
     public void getChildren_shouldAddNewLineAsCharacter() {
-        assertThat(new Document("super\n").getChildren()).containsExactly(new Line("super"), new Character('\n'));
+        assertThat(new Document("super\n").getChildren()).containsExactly(new Paragraph("super"), new Character('\n'));
     }
 
     @Test
     public void getChildren_shouldAddCarriageReturnAsCharacter() {
-        assertThat(new Document("super\r").getChildren()).containsExactly(new Line("super"), new Character('\r'));
+        assertThat(new Document("super\r").getChildren()).containsExactly(new Paragraph("super"), new Character('\r'));
     }
 
     @Test
-    @Ignore
-    public void getChildren_shouldAddCarriageReturnLineFeedAsCharacters() {
-        assertThat(new Document("one\r\nis").getChildren()).containsExactly(new Line("one"), new Character('\r'), new
-            Character('\n'), new Line("is"));
+    public void getChildren_shouldSplitParagraphsAtDoubleCarriageReturn() {
+        assertThat(new Document("one\r\ris").getChildren()).containsExactly(new Paragraph("one"), new Character('\r'), new
+            Character('\r'), new Paragraph("is"));
+    }
+
+    @Test
+    public void getChildren_shouldSplitParagraphsAtDoubleLineFeed() {
+        assertThat(new Document("one\n\nis").getChildren()).containsExactly(new Paragraph("one"), new Character('\n'), new
+            Character('\n'), new Paragraph("is"));
     }
 
     @Test
