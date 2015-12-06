@@ -1,36 +1,47 @@
 package org.oblodiff.token.text.linebased;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 import org.oblodiff.token.text.Character;
 import org.oblodiff.token.text.Word;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Test_Line_getChildren {
+/**
+ * Tests for {@link Line}.
+ */
+public class LineTest {
     @Test
-    public void should_Be_Empty_If_Line_Is_Empty() {
+    public void getChildren_shouldBeEmptyIfLineIsEmpty() {
         assertThat(new Line("").getChildren()).isEmpty();
     }
 
     @Test
-    public void should_Return_One_Child_If_Consists_Of_One_NonWordCharacter() {
+    public void getChildren_shouldReturnOneChildIfConsistsOfOneNonWordCharacter() {
         assertThat(new Line(" ").getChildren()).containsExactly(new Character(' '));
     }
 
     @Test
-    public void should_Return_One_Child_If_Consists_Of_One_Word() {
+    public void getChildren_shouldReturnOneChildIfConsistsOfOneWord() {
         assertThat(new Line("super").getChildren()).containsExactly(new Word("super"));
     }
 
     @Test
-    public void should_Add_White_Spaces_As_Character() {
+    public void getChildren_shouldAddWhiteSpacesAsCharacter() {
         assertThat(new Line("one word\tis").getChildren()).containsExactly(new Word("one"), new Character(' '), new Word
             ("word"), new Character('\t'), new Word("is"));
     }
 
     @Test
-    public void should_Add_Multiple_White_Spaces_As_Characters() {
+    public void getChildren_shouldAddMultipleWhiteSpacesAsCharacters() {
         assertThat(new Line("one  \tis").getChildren()).containsExactly(new Word("one"), new Character(' '), new
             Character(' '), new Character('\t'), new Word("is"));
+    }
+
+    @Test
+    public void equalsAndHashCode() {
+        // Null is avoided by validation in constructor.
+        EqualsVerifier.forClass(Line.class).suppress(Warning.NULL_FIELDS).verify();
     }
 }

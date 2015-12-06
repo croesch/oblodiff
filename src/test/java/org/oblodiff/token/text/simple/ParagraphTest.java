@@ -1,49 +1,60 @@
 package org.oblodiff.token.text.simple;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 import org.oblodiff.token.text.Character;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Test_Paragraph_getChildren {
+/**
+ * Tests for {@link Paragraph}.
+ */
+public class ParagraphTest {
     @Test
-    public void should_Be_Empty_If_Paragraph_Is_Empty() {
+    public void getChildren_shouldBeEmptyIfParagraphIsEmpty() {
         assertThat(new Paragraph("").getChildren()).isEmpty();
     }
 
     @Test
-    public void should_Return_One_Child_If_Consists_Of_One_ExclamationMark() {
+    public void getChildren_shouldReturnOneChildIfConsistsOfOneExclamationMark() {
         assertThat(new Paragraph("!").getChildren()).containsExactly(new Character('!'));
     }
 
     @Test
-    public void should_Return_One_Child_If_Consists_Of_One_QuestionMark() {
+    public void getChildren_shouldReturnOneChildIfConsistsOfOneQuestionMark() {
         assertThat(new Paragraph("?").getChildren()).containsExactly(new Character('?'));
     }
 
     @Test
-    public void should_Return_One_Child_If_Consists_Of_One_Period() {
+    public void getChildren_shouldReturnOneChildIfConsistsOfOnePeriod() {
         assertThat(new Paragraph(".").getChildren()).containsExactly(new Character('.'));
     }
 
     @Test
-    public void should_Return_One_Child_If_Consists_Of_One_Sentence() {
+    public void getChildren_shouldReturnOneChildIfConsistsOfOneSentence() {
         assertThat(new Paragraph("super").getChildren()).containsExactly(new Sentence("super"));
     }
 
     @Test
-    public void should_Add_ExclamationMark_As_Character() {
+    public void getChildren_shouldAddExclamationMarkAsCharacter() {
         assertThat(new Paragraph("super!").getChildren()).containsExactly(new Sentence("super"), new Character('!'));
     }
 
     @Test
-    public void should_Add_QuestionMark_As_Character() {
+    public void getChildren_shouldAddQuestionMarkAsCharacter() {
         assertThat(new Paragraph("super?").getChildren()).containsExactly(new Sentence("super"), new Character('?'));
     }
 
     @Test
-    public void should_Add_Whitespace_Between_Sentences_As_Characters() {
+    public void getChildren_shouldAddWhitespaceBetweenSentencesAsCharacters() {
         assertThat(new Paragraph("one. is").getChildren()).containsExactly(new Sentence("one"), new Character('.'), new
             Character(' '), new Sentence("is"));
+    }
+
+    @Test
+    public void equalsAndHashCode() {
+        // Null is avoided by validation in constructor.
+        EqualsVerifier.forClass(Paragraph.class).suppress(Warning.NULL_FIELDS).verify();
     }
 }
