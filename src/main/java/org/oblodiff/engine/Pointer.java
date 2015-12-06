@@ -19,6 +19,12 @@ public class Pointer {
      */
     private final PointerType type;
 
+    /**
+     * Dedicated constructor.
+     *
+     * @param address {@see #address}
+     * @param type    {@see #type}
+     */
     public Pointer(final int address, final PointerType type) {
         this.address = address;
         this.type = type;
